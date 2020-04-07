@@ -4,7 +4,6 @@ from user_input import site_name
 from server import restart
 
 def run():
-	print("is httpd", is_httpd())
 	site = site_name();
 	print("Generating configuration file")
 	conf = generate_host_config(site)
