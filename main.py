@@ -1,9 +1,10 @@
 #!/usr/local/bin/python3
-from config import isHttpd, generate_host_config, write_config, create_site_dir
+from config import generate_host_config, write_config, create_site_dir, is_httpd
 from user_input import site_name
 from server import restart
 
 def run():
+	print("is httpd", is_httpd())
 	site = site_name();
 	print("Generating configuration file")
 	conf = generate_host_config(site)
@@ -12,8 +13,9 @@ def run():
 	print(f"Configuration written to {written} successfully")
 	print("Creating directory")
 	create_site_dir(site);
-	print("Server restart:");
+	print("Restarting server:");
 	restart()
+	print("Server is restarted.")
 	
 if __name__ == "__main__":
 	run()

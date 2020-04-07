@@ -2,3 +2,6 @@
 /.vscode
 /*.conf
 /*.pyc
+/dist
+/build
+/*.spec

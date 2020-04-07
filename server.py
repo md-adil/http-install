@@ -1,6 +1,7 @@
-from config import isHttpd
+import os
+from config import is_httpd
 def restart():
-	if isHttpd():
-		system("systemctl restart httpd")
-	system("systemctl restart apache2")
+	if is_httpd():
+		os.system("systemctl restart httpd")
+	os.system("systemctl restart apache2")
 	
