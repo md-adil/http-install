@@ -10,15 +10,17 @@ def get_sites_dir():
 def get_conf_dir():
 	if is_httpd():
 		return "/etc/httpd/conf.d"
-	return "/etc/apache2/sites-available"
+	return "/etc/apache2/sites-enabled"
 
 def get_log_dir():
 	if is_httpd():
 		return "/var/log/httpd"
-	return "/var/log/httpd"
+	return "/var/log/apache2"
 	
 def create_site_dir(site):
-	os.mkdir(f'{sites_dir()}/{site}')
+	d = f'{get_sites_dir()}/{site}'
+	if not os.path.exists(d):
+		os.mkdir(d)
 
 def generate_host_config(site_name):
 	log_dir = get_log_dir()
