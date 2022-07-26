@@ -1,7 +1,8 @@
 #!/usr/local/bin/python3
 from config import generate_host_config, write_config, create_site_dir, is_httpd
 from user_input import site_name
-from server import restart
+from server.main import server
+
 
 def run():
 	site = site_name()
@@ -13,9 +14,12 @@ def run():
 	print("Creating directory")
 	create_site_dir(site)
 	print("Restarting server:")
-	restart()
 	print("Server is restarted.")
-	
+
+
+def main():
+	serv = server()
+	print("Running main task", serv.list())
 if __name__ == "__main__":
-	run()
+	main()
 	
