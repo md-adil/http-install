@@ -19,4 +19,5 @@ def is_apache2():
 	return which('apache2') is not None or  which('httpd') is not None
 
 def is_nginx():
-    return which('nginx') is not None
+	return True
+    # return which('nginx') is not None

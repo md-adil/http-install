@@ -4,7 +4,7 @@ from .server import Location, Server
 
 class NginxServer():
     def __init__(self):
-        self.sites_dir = '/etc/nginx/conf.d'
+        self.sites_dir = 'stubs/nginx'
         self.command = 'nginx'
 
     def getServers(self):
@@ -47,7 +47,6 @@ def createServer(rows, filename):
                     continue
                 if key == 'server_name': srv.name = val; continue
                 if key == 'listen': srv.port = val; continue
-                print(key, val)
             
     return srv
 

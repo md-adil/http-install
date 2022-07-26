@@ -1,7 +1,3 @@
 __pycache__
-/.vscode
-/*.conf
-/*.pyc
 /dist
-/build
-/*.spec
+/venv
